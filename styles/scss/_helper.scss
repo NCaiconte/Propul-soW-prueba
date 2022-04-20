@@ -1,0 +1,34 @@
+@use "./variables";
+
+.icon-btn {
+  user-select: none;
+  cursor: pointer;
+  color: variables.$font-primary;
+  width: 2rem;
+  height: 2rem;
+  transition: opacity 0.2s ease-in-out;
+ 
+}
+.btn {
+  user-select: none;
+  cursor: pointer;
+  background-color: variables.$primary;
+  padding: 8px 32px;
+  transition: background-color 0.2s ease-in-out;
+  border-radius: 5px;
+  text-transform: uppercase;
+  color: variables.$font-primary;
+  font-weight: 500;
+  img {
+    height: 2rem;
+    width: 2rem;
+    margin-right: 0.8rem;
+  }
+  
+}
+.container {
+  max-width: 100%;
+  &-relative {
+    position: relative;
+  }
+}

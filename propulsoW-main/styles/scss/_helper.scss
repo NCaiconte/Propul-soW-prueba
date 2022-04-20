@@ -1,0 +1,72 @@
+@use "./variables";
+
+.flex {
+  display: flex;
+  &-ai-c {
+    align-items: center;
+  }
+  &-ai-s {
+    align-items: flex-start;
+  }
+  &-jc-c {
+    justify-content: center;
+  }
+  &-jc-sb {
+    justify-content: space-between;
+  }
+  &-jc-se {
+    justify-content: space-evenly;
+  }
+  &-jc-sa {
+    justify-content: space-around;
+  }
+  &-r-wrap {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  &-fd-c {
+    flex-direction: column;
+  }
+}
+.icon-btn {
+  user-select: none;
+  cursor: pointer;
+  color: variables.$font-primary;
+  width: 2rem;
+  height: 2rem;
+  transition: opacity 0.2s ease-in-out;
+  &:hover {
+    opacity: 0.7;
+  }
+  &:active {
+    opacity: 1;
+  }
+}
+.btn {
+  user-select: none;
+  cursor: pointer;
+  background-color: variables.$primary;
+  padding: 8px 32px;
+  transition: background-color 0.2s ease-in-out;
+  border-radius: 5px;
+  text-transform: uppercase;
+  color: variables.$font-primary;
+  font-weight: 500;
+  img {
+    height: 2rem;
+    width: 2rem;
+    margin-right: 0.8rem;
+  }
+  &:hover {
+    background-color: lighten(variables.$primary, $amount: 10%)
+  }
+  &:active {
+    background-color: variables.$primary;
+  }
+}
+.container {
+  max-width: 100%;
+  &-relative {
+    position: relative;
+  }
+}

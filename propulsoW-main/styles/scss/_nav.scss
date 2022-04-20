@@ -1,0 +1,115 @@
+@use "variables";
+.banner-nav {
+  padding: 8px 0;
+  background-color: variables.$primary;
+  color: variables.$font-primary;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+.nav {
+  background-color: variables.$font-primary;
+  position: relative;
+  height: 60px;
+  > .logo {
+    display: inline-block;
+    height: 30px;
+    width: auto;
+    padding-left: 3%;
+    margin-right: 3%;
+    > img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  > .menu {
+    flex-grow: 1;
+    max-width: 65%;
+    height: fit-content;
+    > #nav-bag {
+      position: relative;
+      #bag-items-badge {
+        font-size: .7rem;
+        display: inline-flex;
+        position: absolute;
+        top: -20%;
+        right: -25%;
+        width: 1.5rem;
+        height: 1.5rem;
+        background-color: variables.$primary-transparent;
+        color: variables.$font-primary;
+        border-radius: 50%;
+      }
+    }
+    > li:nth-child(-n+5) {
+      display: none;
+      > a {
+        font-size: 1.2rem;
+      }
+    }
+    .hamburger-menu {
+      height: 1.5rem;
+      width: 1.5rem;
+      &.open {
+        > a > span:first-child {
+            transform: rotate(45deg);
+        }
+        > a > span:nth-child(2) {
+            opacity: 0;
+        }
+        > a > span:last-child {
+            transform: rotate(-45deg);
+        }
+        & + .dropdown-menu {
+          display: flex;
+        }
+      }
+      & + .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0%;
+        width: 100%;
+        height: 50vh;
+        z-index: 999;
+        background-color: variables.$secondary-light;
+        > ul {
+          width: 100%;
+          a {
+            color: variables.$font-secondary;
+            font-size: 1.4rem;
+            &:hover, &:active {
+              color: lighten(variables.$font-secondary, 20%)
+            }
+          }
+        }
+      }
+      > a {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        padding: 8% 1%;
+        > span {
+          background-color: variables.$primary;
+          position: relative;
+          transform-origin: left;
+          display: block;
+          height: 15%;
+          width: 100%;
+          transition: all 0.2s ease-in-out;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 810px) {
+  .nav {
+    .menu {
+      > li:nth-child(-n+5) {
+        display: block;
+      }
+      > li:last-of-type {
+        display: none;
+      }
+    }
+  }
+}

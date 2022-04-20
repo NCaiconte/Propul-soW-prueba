@@ -1,0 +1,53 @@
+@use "variables";
+.banner-nav {
+  padding: 8px 0;
+  background-color: variables.$primary;
+  color: variables.$font-primary;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+.nav {
+  background-color: variables.$font-primary;
+  position: relative;
+  height: 60px;
+  > .logo {
+    display: inline-block;
+    height: 30px;
+    width: auto;
+    padding-left: 3%;
+    margin-right: 3%;
+    > img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  > .menu {
+    
+    max-width: 65%;
+    height: fit-content;
+    > #nav-bag {
+      position: relative;
+      
+    }
+    > li:nth-child(-n+5) {
+      display: none;
+      > a {
+        font-size: 1.2rem;
+      }
+    }
+    
+    }
+  }
+
+@media (min-width: 810px) {
+  .nav {
+    .menu {
+      > li:nth-child(-n+5) {
+        display: block;
+      }
+      > li:last-of-type {
+        display: none;
+      }
+    }
+  }
+}

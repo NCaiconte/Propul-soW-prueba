@@ -1,0 +1,46 @@
+@use "variables";
+
+.product-container {
+  width: 100%;
+  > .product {
+    width: 100%;
+    max-width: 400px;
+    height: fit-content;
+    flex-shrink: 0;
+    padding: 3rem;
+    > .product-image{
+      position: relative;
+      width: 100%;
+      > img {
+        width: 80%;
+      }
+     
+    }
+    > .product-description {
+      color: variables.$font-secondary;
+      background-color: variables.$secondary-light;
+      padding: 1.5rem;
+      > .product-name {
+        width: 70%;
+        user-select: all;
+      }
+      > p {
+        padding-bottom: 1rem;
+      }
+      > .product-price {
+        width: 70%;
+        > .product-price-original {
+          color: lighten(variables.$font-secondary, 20%);
+          text-decoration: 1px line-through lighten(variables.$font-secondary, 20%);
+          font-size: 1.4rem;
+          margin-right: 0.5rem;
+        }
+        > .product-price-discount {
+          color: variables.$primary;
+          font-size: 1.4rem;
+        }
+      }
+
+    }
+  }
+}

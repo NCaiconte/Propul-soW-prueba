@@ -1,0 +1,82 @@
+@use "variables";
+
+.product-container {
+  width: 100%;
+  > .product {
+    width: 100%;
+    max-width: 400px;
+    height: fit-content;
+    flex-shrink: 0;
+    padding: 3rem;
+    > .product-image{
+      position: relative;
+      width: 100%;
+      > img {
+        width: 80%;
+      }
+      > .product-badge {
+        user-select: none;
+        font-weight: 700;
+        top: 5%;
+        left: 5%;
+        position: absolute;
+        font-size: 1.5rem;
+        color: variables.$font-primary;
+      }
+      > .product-badge-bg {
+        z-index: -1;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        content: ' ';
+        border-color: variables.$primary;
+        width: 0;
+        height: 0;
+        border-right: 4rem solid transparent;
+        border-bottom: 4rem solid transparent;
+        border-top: 4rem solid variables.$primary-light;
+        border-left: 4rem solid variables.$primary-light;
+      }
+      > .product-discount-badge {
+        user-select: none;
+        font-weight: 500;
+        font-size: 0.9rem;
+        height: 2.5rem;
+        width: 2.5rem;
+        top: 5%;
+        right: 5%;
+        position: absolute;
+        color: variables.$font-primary;
+        background-color: variables.$hightlight;
+        padding: 0.5rem;
+        border-radius: 50%;
+      }
+    }
+    > .product-description {
+      color: variables.$font-secondary;
+      background-color: variables.$secondary-light;
+      padding: 1.5rem;
+      > .product-name {
+        width: 70%;
+        user-select: all;
+      }
+      > p {
+        padding-bottom: 1rem;
+      }
+      > .product-price {
+        width: 70%;
+        > .product-price-original {
+          color: lighten(variables.$font-secondary, 20%);
+          text-decoration: 1px line-through lighten(variables.$font-secondary, 20%);
+          font-size: 1.4rem;
+          margin-right: 0.5rem;
+        }
+        > .product-price-discount {
+          color: variables.$primary;
+          font-size: 1.4rem;
+        }
+      }
+
+    }
+  }
+}

@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-family: Roboto;
+}
+html, body {
+  max-width: 100vw;
+  scroll-behavior: smooth;
+  min-width: 340px;
+}
+a, li {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+button {
+  border: none;
+}
